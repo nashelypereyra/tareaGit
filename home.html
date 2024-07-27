@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+    <main class="container">
+        <div class="row m-3">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="text-center">Generador de CV</h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center">Required information</h5>
+                    
+                    <h6 class="card-subtitle">Personal information</h6>
+                    <div class="mt-3 mb-3">
+                        <label for="name" class="form-label">Name: </label>
+                        <input id="input-name" type="text" class="form-control" id="name">
+                    </div>
+
+                    <div class="mt-3 mb-3">
+                        <label for="title" class="form-label">Title: </label>
+                        <input id="input-title" type="text" class="form-control" id="title">
+                    </div>
+
+                    <div class="mt-3 mb-3">
+                        <label for="email" class="form-label">Email: </label>
+                        <input id="input-email" type="email" class="form-control" id="email">
+                    </div>
+
+                    <div class="mt-3 mb-3">
+                        <label for="telephone" class="form-label">Telephone number: </label>
+                        <input id="input-telephone" type="text" class="form-control" id="telephone">
+                    </div>
+
+                    <div class="mt-3 mb-3">
+                        <label for="birthdate" class="form-label">Birthdate: </label>
+                        <input id="input-birthday" type="date" class="form-control" id="birthdate">
+                    </div>
+
+                    <div class="mt-3 mb-3">
+                        <label for="linkedln" class="form-label">LinkedIn link: </label>
+                        <input id="input-link" type="url" class="form-control" id="linkedln">
+                    </div>
+
+                    <h6 class="card-subtitle">Skills</h6>
+                    
+                    <div id="skill-container">
+                        <div class="mt-3 mb-3 d-flex align-items-center">
+                            <input id="skill-name" type="text" class="form-control me-3" placeholder="Skill name">
+                            <select for="skill-name" class="form-select me-3">
+                                <option>Level</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option> 
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <button class="btn btn-primary" onclick="Skills()" type="button">+</button>
+                            <button class="btn btn-danger remover" onclick="SkillsRemove()" type="button">-</button>
+                        </div>
+                    </div>
+
+                    <h6 class="card-subtitle">Software</h6>
+
+                    <div id="software-container">
+                        <div class="mt-3 mb-3 d-flex align-items-center">
+                            <input id="software-name" type="text" class="form-control me-3" placeholder="Software name">
+                            <select for="software-name" class="form-select me-3">
+                                <option>Level</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option> 
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <button class="btn btn-primary" onclick="Software()" type="button">+</button>
+                            <button class="btn btn-danger remover" onclick="SoftwareRemove()" type="button">-</button>
+                        </div>
+                    </div>
+
+                    <h6 class="card-subtitle">Languages</h6>
+
+                    <div id="languages-container">
+                        <div class="mt-3 mb-3 d-flex align-items-center">
+                            <input id="language-name" type="text" class="form-control me-3" placeholder="Language name">
+                            <select for="language-name" class="form-select me-3">
+                                <option>Level</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option> 
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <button class="btn btn-primary" onclick="Languages()" type="button">+</button>
+                            <button class="btn btn-danger remover" onclick="LanguagesRemove()" type="button">-</button>
+                        </div>
+                    </div>
+
+                    <h6 class="card-subtitle">Professional resume</h6>
+
+                    <textarea id="resume" class="profesional-resume" placeholder="Resume"></textarea>
+
+                    <h6 class="card-subtitle">Work experience</h6>
+
+                    <div id="work-container">
+                        <div class="mt-3 mb-3 d-flex align-items-center">
+                            <input id="word-experience" type="text" class="form-control me-3" placeholder="Company Name">
+                            <label for="start-date" class="me-2">Start Date: </label>
+                            <input id="start-date" type="date" class="form-control me-3">
+                            <label for="end-date" class="me-2">End Date: </label>
+                            <input id="end-date" type="date" class="form-control me-3">
+                            <button class="btn btn-primary" onclick="Work()" type="button">+</button>
+                            <button class="btn btn-danger remover" onclick="WorkRemove()" type="button">-</button>
+                        </div>
+                    </div>                    
+
+                    <h6 class="card-subtitle">Education</h6>
+
+                    <div id="education-container">
+                        <div class="mt-3 mb-3 d-flex align-items-center">
+                            <input type="text" id="education" class="form-control me-3" placeholder="Name of the Institution">
+                            <label for="star-date-education" class="me-2">Star Date: </label>
+                            <input id="start-date-education" type="date" class="form-control me-3">
+                            <label for="end-date-education" class="me-2">End Date: </label>
+                            <input id="end-date-education" type="date" class="form-control me-3">
+                            <button class="btn btn-primary" onclick="Education()" type="button">+</button>
+                            <button class="btn btn-danger remover" onclick="EducationRemove()" type="button">-</button>
+                        </div>
+                    </div>
+
+                    <h6 class="card-subtitle">Certifications</h6>
+
+                    <div id="certifications-container">
+                        <div class="mt-3 mb-3 d-flex align-items-center">
+                            <input type="text" id="certification" class="form-control me-3" placeholder="Certification Name">
+                            <label for="star-date-certification" class="me-2">Date of Obtaining: </label>
+                            <input id="start-date-certification" type="date" class="form-control me-3">
+                            <label for="end-date-certification" class="me-2">Date of Expiration: </label>
+                            <input id="end-date-certification" type="date" class="form-control me-3">
+                            <button class="btn btn-primary" onclick="Certification()" type="button">+</button>
+                            <button class="btn btn-danger remover" onclick="CertificationRemove()" type="button">-</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-success" onclick="Save()">Save</button>
+
+                </div>
+            </div>
+        </div>
+        <div id="cv-container">
+            
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

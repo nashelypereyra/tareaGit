@@ -1,0 +1,22 @@
+.profesional-resume{
+    width: 100%;
+    height: 100px;
+}
+
+button:hover{
+    opacity: 0.5;
+}
+
+.remover{
+    margin-left: 2px;
+}
+
+.input-bad{
+    border-color: red !important;
+    border-width: medium !important;
+}
+
+.input-good{
+    border-color: green !important;
+    border-width: medium !important;
+}
